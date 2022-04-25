@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public float Speed = 1;
     public float Jump = 1;
     private Rigidbody2D rb;
+    public Bullet bulletPrefab;
+    public Transform LaunchOffset;
+    bool facingRight = true;
 
 
     void Start()
@@ -24,9 +27,24 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, Jump), ForceMode2D.Impulse);
         }    
-
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bulletPrefab, LaunchOffset.position, transform.rotation);
+        }
+        if(movement < 0 && facingRight)
+        {
+            flip();
+        }
+        if (movement > 0 && !facingRight)
+        {
+            flip();
+        }
     }
+    void flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+} 
 
-}
 

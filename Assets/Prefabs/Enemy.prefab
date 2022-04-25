@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3183677443010299404}
   - component: {fileID: 3183677443010299403}
   m_Layer: 0
-  m_Name: nightmare-galloping1
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
