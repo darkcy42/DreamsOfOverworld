@@ -18,6 +18,12 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D (Collision2D collision)
     {
+        var enemy = collision.collider.GetComponent<EnemyBehavior>();
+        if(enemy)
+        {
+            enemy.TakeHit(1);
+        }
+
         Destroy(gameObject);
     }
 
