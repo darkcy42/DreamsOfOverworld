@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 5f;
+    bool facingRight = true; 
 
     void Start()
     {
@@ -27,7 +28,12 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+    void flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+} 
 
 
-}
+
